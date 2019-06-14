@@ -1,0 +1,1155 @@
+[
+    {
+        "className": "AddressRole",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.AddressRole",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "noRESTSse": "true",
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "dtoVersion": "2.0.0",
+            "exceptionShort": "AddressRoleException"
+        },
+        "properties": [
+            {
+                "name": "partyId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "SwaggerReference": "dhc.osgi.user.api.dto.Party",
+                    "swaggerValidation": "uuid",
+                    "description": "Points to the affiliated Party"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "addressRoleType",
+                "dtoClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "type": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "annotations": {
+                    "description": "A means to describe what roles this Address plays"
+                },
+                "dtoEnums": {
+                    "value": {
+                        "name": "dhc.osgi.user.api.dto.AddressRoleType",
+                        "values": [
+                            {
+                                "name": "unknown",
+                                "description": "Unknown role"
+                            },
+                            {
+                                "name": "home",
+                                "description": "Home role"
+                            },
+                            {
+                                "name": "unit",
+                                "description": "Unit role (apartment, ...)"
+                            },
+                            {
+                                "name": "office",
+                                "description": "Office role"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "locationId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "SwaggerReference": "dhc.osgi.geospatial.api.dto.Location",
+                    "swaggerValidation": "uuid",
+                    "description": "Points to the Location in geospatial"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "PostalAddress",
+        "classPackage": "dhc.osgi.geospatial.api.dto",
+        "fullClassName": "dhc.osgi.geospatial.api.dto.PostalAddress",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "AccountRole",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.AccountRole",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "noRESTSse": "true",
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "dtoVersion": "1.0.1",
+            "exceptionShort": "AccountRoleException"
+        },
+        "properties": [
+            {
+                "name": "accountRoleType",
+                "dtoClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "type": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "annotations": {
+                    "description": "A means to describe what roles this Account plays"
+                },
+                "dtoEnums": {
+                    "value": {
+                        "name": "dhc.osgi.user.api.dto.AccountRoleType",
+                        "values": [
+                            {
+                                "name": "unknown",
+                                "description": "Unknown role"
+                            },
+                            {
+                                "name": "contact",
+                                "description": "Contact role"
+                            },
+                            {
+                                "name": "contractor",
+                                "description": "Contractor role"
+                            },
+                            {
+                                "name": "employee",
+                                "description": "Employee role"
+                            },
+                            {
+                                "name": "owner",
+                                "description": "Owner role"
+                            },
+                            {
+                                "name": "partner",
+                                "description": "Partner role"
+                            },
+                            {
+                                "name": "primary",
+                                "description": "Primary role"
+                            },
+                            {
+                                "name": "subscriber",
+                                "description": "Subscriber role"
+                            },
+                            {
+                                "name": "manager",
+                                "description": "Manager role"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "organizationId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "swaggerValidation": "uuid",
+                    "description": "Points to the Organization",
+                    "swaggerReference": "dhc.osgi.user.api.dto.Organization"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "accountId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "swaggerValidation": "uuid",
+                    "description": "Points to the Account",
+                    "swaggerReference": "dhc.osgi.user.api.dto.Account"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "RegistrationNewAccountRequest",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.RegistrationNewAccountRequest",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "Audited": "true",
+            "noRESTUpdate": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "description": "Registration eligibility",
+            "exceptionParent": "Exception",
+            "noRESTRead": "true",
+            "exceptionShort": "RegistrationNewAccountRequestException"
+        },
+        "properties": [
+            {
+                "name": "firstName",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "First name of the Subscriber"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "lastName",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Last name of the Subscriber"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "password",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "notRequired": "true",
+                    "isWriteOnly": "true",
+                    "description": "Desired password"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "primaryContactEmail",
+                "dtoClassName": "dhc.osgi.user.api.dto.Email",
+                "type": "Email",
+                "annotations": {
+                    "description": "Primary contact email"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "primaryPhone",
+                "dtoClassName": "dhc.osgi.user.api.dto.Phone",
+                "type": "Phone",
+                "annotations": {
+                    "description": "Primary Phone"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "addressRole",
+                "dtoClassName": "dhc.osgi.user.api.dto.AddressRole",
+                "type": "AddressRole",
+                "annotations": {
+                    "description": "Address Role"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "partyId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "notRequired": "true",
+                    "description": "Party Id"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "accountId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "notRequired": "true",
+                    "description": "Account Id"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "Date",
+        "classPackage": "java.util",
+        "fullClassName": "java.util.Date",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "Dto",
+        "classPackage": "com.pavlovmedia.oss.dtoengine.api.dsl",
+        "fullClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "Dto",
+        "classPackage": "com.pavlovmedia.oss.dtoengine.api.dsl",
+        "fullClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "Staff",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.Staff",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "exceptionShort": "StaffException"
+        },
+        "properties": [
+            {
+                "name": "accountId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "account id of staff"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "firstName",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "first name of myproperties staff"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "lastName",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "last name of myproperties staff"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "emails",
+                "dtoClassName": "dhc.osgi.user.api.dto.Email",
+                "type": "Email",
+                "annotations": {
+                    "description": "List of emails",
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "phones",
+                "dtoClassName": "dhc.osgi.user.api.dto.Phone",
+                "type": "Phone",
+                "annotations": {
+                    "description": "List of Phones",
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "postalLocation",
+                "dtoClassName": "dhc.osgi.geospatial.api.dto.PostalAddress",
+                "type": "dhc.osgi.geospatial.api.dto.PostalAddress",
+                "annotations": {
+                    "description": "Postal location for staff"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "roles",
+                "dtoClassName": "dhc.osgi.user.api.dto.AccountRole",
+                "type": "AccountRole",
+                "annotations": {
+                    "description": "Property roles assigned to staff",
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "Phone",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.Phone",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "noRESTSse": "true",
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "dtoVersion": "2.0.0",
+            "exceptionShort": "PhoneException"
+        },
+        "properties": [
+            {
+                "name": "partyId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "SwaggerReference": "dhc.osgi.user.api.dto.Party",
+                    "swaggerValidation": "uuid",
+                    "description": "Points to the affiliated Party"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "phoneNumber",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "The phone number"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "isValidated",
+                "dtoClassName": "java.lang.Boolean",
+                "type": "Boolean",
+                "annotations": {
+                    "isReadOnly": "true",
+                    "description": "Has this phone number been validated"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "isEnabled",
+                "dtoClassName": "java.lang.Boolean",
+                "type": "Boolean",
+                "annotations": {
+                    "notRequired": "true",
+                    "description": "Is this phone number enabled (FCC ruling, think unsubscribe)"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "messageablePhone",
+                "dtoClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "type": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "annotations": {
+                    "description": "Is this a messageable phone number"
+                },
+                "dtoEnums": {
+                    "value": {
+                        "name": "dhc.osgi.user.api.dto.MessageablePhone",
+                        "values": [
+                            {
+                                "name": "none",
+                                "description": "None of the below"
+                            },
+                            {
+                                "name": "sms",
+                                "description": "This is an SMS phone number and hence, messageable"
+                            },
+                            {
+                                "name": "pots",
+                                "description": "This is a Plain Old Telephone phone number and hence non-messageable"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "phoneType",
+                "dtoClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "type": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "annotations": {
+                    "notRequired": "true",
+                    "description": "The type of phone this is"
+                },
+                "dtoEnums": {
+                    "value": {
+                        "name": "dhc.osgi.user.api.dto.PhoneType",
+                        "values": [
+                            {
+                                "name": "UNKNOWN",
+                                "description": "Unknown phone number type"
+                            },
+                            {
+                                "name": "OFFICE",
+                                "description": "Office phone number type"
+                            },
+                            {
+                                "name": "HOME",
+                                "description": "Home phone number type"
+                            },
+                            {
+                                "name": "MAIN",
+                                "description": "Main phone number type"
+                            },
+                            {
+                                "name": "FAX",
+                                "description": "Fax machine phone number type"
+                            },
+                            {
+                                "name": "MOBILE",
+                                "description": "Mobile phone number type"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "className": "OrganizationDetails",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.OrganizationDetails",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "noRESTSse": "true",
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "dtoVersion": "1.0.1",
+            "exceptionShort": "OrganizationDetailsException"
+        },
+        "properties": [
+            {
+                "name": "partyId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "swaggerValidation": "uuid",
+                    "description": "Points to the Party",
+                    "swaggerReference": "dhc.osgi.user.api.dto.Party"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "organizationId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Organization\u0027s ID"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "partyEmails",
+                "dtoClassName": "dhc.osgi.user.api.dto.Email",
+                "type": "Email",
+                "annotations": {
+                    "description": "emails belonging to the party",
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "partyPhones",
+                "dtoClassName": "dhc.osgi.user.api.dto.Phone",
+                "type": "Phone",
+                "annotations": {
+                    "description": "phones belonging to the party",
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "partyAddressRoles",
+                "dtoClassName": "dhc.osgi.user.api.dto.AddressRole",
+                "type": "AddressRole",
+                "annotations": {
+                    "description": "address roles belonging to the party",
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "name",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Name of the Organization"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "description",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Description"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "parentOrganizationName",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "notRequired": "true",
+                    "swaggerValidation": "uuid",
+                    "description": "Pointer to the parent of this Organization.  If null, you are at the top.  If not null, this is a sub-organization",
+                    "swaggerReference": "dhc.osgi.user.api.dto.Organization"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "postalAddressMap",
+                "dtoClassName": "dhc.osgi.geospatial.api.dto.PostalAddress",
+                "type": "dhc.osgi.geospatial.api.dto.PostalAddress",
+                "annotations": {
+                    "description": "Maps are types with the map annotation",
+                    "mapKeyType": "java.lang.String",
+                    "isMap": "true"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "ResetToken",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.ResetToken",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "noRESTSse": "true",
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "exceptionShort": "ResetTokenException"
+        },
+        "properties": [
+            {
+                "name": "token",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "identifier": "true",
+                    "description": "This is the Password Reset Token",
+                    "swaggerFormat": "uuid"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "expirationDate",
+                "dtoClassName": "java.util.Date",
+                "type": "java.util.Date",
+                "annotations": {
+                    "description": "Date when the token expires"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "GeolocationTuple",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.GeolocationTuple",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "noRESTSse": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "dtoVersion": "1.0.1",
+            "exceptionShort": "GeolocationTupleException"
+        },
+        "properties": [
+            {
+                "name": "locationId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "locationId"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "postalAddress",
+                "dtoClassName": "dhc.osgi.geospatial.api.dto.PostalAddress",
+                "type": "dhc.osgi.geospatial.api.dto.PostalAddress",
+                "annotations": {
+                    "description": "postalAddress"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "OrganizationCreationRequest",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.OrganizationCreationRequest",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "doSwaggerModel": "true",
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "exceptionShort": "OrganizationCreationRequestException"
+        },
+        "properties": [
+            {
+                "name": "organizationName",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Name of the organization"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "organizationDescription",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Description of the organization"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "parentOrganizationId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "notRequired": "true",
+                    "description": "ID of the organization to which the newly created organization is parented"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "emailAddresses",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "List of Email Addresses that can be turned into instances of Email",
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "phones",
+                "dtoClassName": "dhc.osgi.user.api.dto.Phone",
+                "type": "Phone",
+                "annotations": {
+                    "swaggerValidation": "uuid",
+                    "description": "List of Phones.",
+                    "swaggerReference": "dhc.osgi.user.api.dto.Phone",
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "postalAddress",
+                "dtoClassName": "dhc.osgi.geospatial.api.dto.PostalAddress",
+                "type": "dhc.osgi.geospatial.api.dto.PostalAddress",
+                "annotations": {
+                    "description": "Postal address associated with the organization"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "Dto",
+        "classPackage": "com.pavlovmedia.oss.dtoengine.api.dsl",
+        "fullClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "Dto",
+        "classPackage": "com.pavlovmedia.oss.dtoengine.api.dsl",
+        "fullClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "Organization",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.Organization",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "noRESTSse": "true",
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "dtoVersion": "1.0.1",
+            "exceptionShort": "OrganizationException"
+        },
+        "properties": [
+            {
+                "name": "partyId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "swaggerValidation": "uuid",
+                    "description": "Points to the Party",
+                    "swaggerReference": "dhc.osgi.user.api.dto.Party"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "name",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Name of the Organization"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "description",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Description"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "parentOrganizationId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "notRequired": "true",
+                    "swaggerValidation": "uuid",
+                    "description": "Pointer to the parent of this Organization.  If null, you are at the top.  If not null, this is a sub-organization",
+                    "swaggerReference": "dhc.osgi.user.api.dto.Organization"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "Boolean",
+        "classPackage": "java.lang",
+        "fullClassName": "java.lang.Boolean",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "String",
+        "classPackage": "java.lang",
+        "fullClassName": "java.lang.String",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "Dto",
+        "classPackage": "com.pavlovmedia.oss.dtoengine.api.dsl",
+        "fullClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "AuthenticationSecret",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.AuthenticationSecret",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "noRESTSse": "true",
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "exceptionShort": "AuthenticationSecretException"
+        },
+        "properties": [
+            {
+                "name": "passwordHash",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "notRequired": "true",
+                    "description": "The user\u0027s hashed password"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "salt",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "notRequired": "true",
+                    "description": "The user\u0027s password salt"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "resetTokens",
+                "dtoClassName": "dhc.osgi.user.api.dto.ResetToken",
+                "type": "ResetToken",
+                "annotations": {
+                    "isSet": "true",
+                    "notRequired": "true",
+                    "swaggerValidation": "uuid",
+                    "description": "Password Reset tokens",
+                    "swaggerReference": "dhc.osgi.user.api.dto.ResetToken"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "hashFunction",
+                "dtoClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "type": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "annotations": {
+                    "description": "The type of hash function that has been applied"
+                },
+                "dtoEnums": {
+                    "value": {
+                        "name": "dhc.osgi.user.api.dto.HashFunction",
+                        "values": [
+                            {
+                                "name": "EXTERNAL",
+                                "description": "External hash function"
+                            },
+                            {
+                                "name": "MD5",
+                                "description": "MD5 hash function"
+                            },
+                            {
+                                "name": "PBKDF2",
+                                "description": "PBKDF2 hash function"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "className": "Email",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.Email",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "noRESTSse": "true",
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "dtoVersion": "2.0.0",
+            "exceptionShort": "EmailException"
+        },
+        "properties": [
+            {
+                "name": "partyId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "SwaggerReference": "dhc.osgi.user.api.dto.Party",
+                    "swaggerValidation": "uuid",
+                    "description": "Points to the affiliated Party"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "address",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Email address",
+                    "swaggerRegex": "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\\\.[a-zA-Z0-9-.]+$"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "isValidated",
+                "dtoClassName": "java.lang.Boolean",
+                "type": "Boolean",
+                "annotations": {
+                    "isReadOnly": "true",
+                    "description": "Has this email been validated"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "isMessageable",
+                "dtoClassName": "java.lang.Boolean",
+                "type": "Boolean",
+                "annotations": {
+                    "description": "Is this email address enabled (FCC ruling, think unsubscribe)"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "Party",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.Party",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "noRESTSse": "true",
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "exceptionShort": "PartyException"
+        },
+        "properties": [
+            {
+                "name": "dummyField",
+                "dtoClassName": "java.lang.Boolean",
+                "type": "Boolean",
+                "annotations": {
+                    "notRequired": "true"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "ExpandedAccountView",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.ExpandedAccountView",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "exceptionShort": "ExpandedAccountViewException"
+        },
+        "properties": [
+            {
+                "name": "account",
+                "dtoClassName": "dhc.osgi.user.api.dto.Account",
+                "type": "Account",
+                "annotations": {},
+                "dtoEnums": {}
+            },
+            {
+                "name": "party",
+                "dtoClassName": "dhc.osgi.user.api.dto.Party",
+                "type": "Party",
+                "annotations": {},
+                "dtoEnums": {}
+            },
+            {
+                "name": "emails",
+                "dtoClassName": "dhc.osgi.user.api.dto.Email",
+                "type": "Email",
+                "annotations": {
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "phones",
+                "dtoClassName": "dhc.osgi.user.api.dto.Phone",
+                "type": "Phone",
+                "annotations": {
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "addressRoles",
+                "dtoClassName": "dhc.osgi.user.api.dto.AddressRole",
+                "type": "AddressRole",
+                "annotations": {
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "accountRoles",
+                "dtoClassName": "dhc.osgi.user.api.dto.AccountRole",
+                "type": "AccountRole",
+                "annotations": {
+                    "isList": "true"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "Account",
+        "classPackage": "dhc.osgi.user.api.dto",
+        "fullClassName": "dhc.osgi.user.api.dto.Account",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "noRESTSse": "true",
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.user.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "exceptionShort": "AccountException"
+        },
+        "properties": [
+            {
+                "name": "partyId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "swaggerValidation": "uuid",
+                    "description": "Points to the parent Party",
+                    "swaggerReference": "dhc.osgi.user.api.dto.Party"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "firstName",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "First name of the Account"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "lastName",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Last name of the Account"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "locationContactId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "notRequired": "true",
+                    "description": "A Contact based upon a Location.  i.e. a front desk for a building"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "authenticationSecretId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "swaggerValidation": "uuid",
+                    "description": "Password and Salt",
+                    "swaggerReference": "dhc.osgi.user.api.dto.AuthenticationSecret"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    }
+]

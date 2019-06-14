@@ -1,0 +1,313 @@
+[
+    {
+        "className": "Sample",
+        "classPackage": "dhc.osgi.demo.sample.api.dto",
+        "fullClassName": "dhc.osgi.demo.sample.api.dto.Sample",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.demo.sample.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "dtoVersion": "1.0.0",
+            "exceptionShort": "SampleException"
+        },
+        "properties": [
+            {
+                "name": "someData",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "notRequired": "true",
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "sampleFactor",
+                "dtoClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "type": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "annotations": {
+                    "notRequired": "true",
+                    "description": "This is a sample enum, remove it if you feel like it",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {
+                    "value": {
+                        "name": "dhc.osgi.demo.sample.api.dto.SampleFactor",
+                        "values": [
+                            {
+                                "name": "low",
+                                "description": "Low"
+                            },
+                            {
+                                "name": "medium",
+                                "description": "Meduim"
+                            },
+                            {
+                                "name": "high",
+                                "description": "High"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "className": "Dto",
+        "classPackage": "com.pavlovmedia.oss.dtoengine.api.dsl",
+        "fullClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "Dto",
+        "classPackage": "com.pavlovmedia.oss.dtoengine.api.dsl",
+        "fullClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "IotDevice",
+        "classPackage": "dhc.osgi.demo.sample.api.dto",
+        "fullClassName": "dhc.osgi.demo.sample.api.dto.IotDevice",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.demo.sample.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "dtoVersion": "1.0.0",
+            "exceptionShort": "IotDeviceException"
+        },
+        "properties": [
+            {
+                "name": "name",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "description",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "location",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "isOptional": "true",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "macAddress",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "attrs",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "mapKeyType": "java.lang.String",
+                    "isMap": "true",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "iotAuthId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "swaggerReference": "dhc.osgi.demo.sample.api.dto.IotAuth",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    },
+    {
+        "className": "String",
+        "classPackage": "java.lang",
+        "fullClassName": "java.lang.String",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {},
+        "properties": []
+    },
+    {
+        "className": "IotApplication",
+        "classPackage": "dhc.osgi.demo.sample.api.dto",
+        "fullClassName": "dhc.osgi.demo.sample.api.dto.IotApplication",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.demo.sample.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "dtoVersion": "1.0.0",
+            "exceptionShort": "IotApplicationException"
+        },
+        "properties": [
+            {
+                "name": "appKey",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "appSecret",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "apiUrl",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "callbackUrl",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "vendor",
+                "dtoClassName": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "type": "com.pavlovmedia.oss.dtoengine.api.dsl.Dto",
+                "annotations": {
+                    "notRequired": "true",
+                    "description": "This is a sample enum, remove it if you feel like it",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {
+                    "value": {
+                        "name": "dhc.osgi.demo.sample.api.dto.IotVendor",
+                        "values": [
+                            {
+                                "name": "Wink",
+                                "description": "Low"
+                            },
+                            {
+                                "name": "Honeywell",
+                                "description": "Meduim"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "className": "IotAuth",
+        "classPackage": "dhc.osgi.demo.sample.api.dto",
+        "fullClassName": "dhc.osgi.demo.sample.api.dto.IotAuth",
+        "interfaceImplements": [],
+        "deletedFields": {},
+        "annotations": {
+            "Audited": "true",
+            "exceptionPackage": "dhc.osgi.demo.sample.api.dto",
+            "isDto": "true",
+            "exceptionParent": "Exception",
+            "dtoVersion": "1.0.0",
+            "exceptionShort": "IotAuthException"
+        },
+        "properties": [
+            {
+                "name": "token",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "refreshToken",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "expires",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "description",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "description": "Some random data",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            },
+            {
+                "name": "iotApplicationId",
+                "dtoClassName": "java.lang.String",
+                "type": "String",
+                "annotations": {
+                    "swaggerReference": "dhc.osgi.demo.sample.api.dto.IotApplication",
+                    "since": "1.0.0"
+                },
+                "dtoEnums": {}
+            }
+        ]
+    }
+]

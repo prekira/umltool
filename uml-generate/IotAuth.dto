@@ -1,0 +1,29 @@
+package dhc.osgi.demo.sample.api.dto;
+
+/**
+ * This is a sample DTO, you will want to update it for your needs
+ * or copy it and update your pom files to use it
+ **/
+@GenericProperty(name="dtoVersion", value="1.0.0")
+@GenericProperty(name="Audited")
+class IotAuth {
+  @Since("1.0.0")
+  @Description("Some random data")
+  String token;
+  
+  @Since("1.0.0")
+  @Description("Some random data")
+  String refreshToken;
+  
+  @Since("1.0.0")
+  @Description("Some random data")
+  String expires;
+  
+  @Since("1.0.0")
+  @Description("Some random data")
+  String description;
+  
+  @Since("1.0.0")
+  @GenericProperty(name="swaggerReference", value="dhc.osgi.demo.sample.api.dto.IotApplication")
+  String iotApplicationId;
+}

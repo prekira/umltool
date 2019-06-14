@@ -1,0 +1,35 @@
+package dhc.osgi.demo.sample.api.dto;
+
+/**
+ * This is a sample DTO, you will want to update it for your needs
+ * or copy it and update your pom files to use it
+ **/
+@GenericProperty(name="dtoVersion", value="1.0.0")
+@GenericProperty(name="Audited")
+class IotApplication {
+  @Since("1.0.0")
+  @Description("Some random data")
+  String appKey;
+  
+  @Since("1.0.0")
+  @Description("Some random data")
+  String appSecret;
+  
+  @Since("1.0.0")
+  @Description("Some random data")
+  String apiUrl;
+  
+  @Since("1.0.0")
+  @Description("Some random data")
+  String callbackUrl;
+
+  @Since("1.0.0")
+  @Description("This is a sample enum, remove it if you feel like it")
+  @NotRequired // Normally these fields *are* required
+  @DtoEnum(name="dhc.osgi.demo.sample.api.dto.IotVendor",
+      values={
+          @DtoEnumValue(name="Wink", description="Low"),
+          @DtoEnumValue(name="Honeywell", description="Meduim")
+      })
+  Dto vendor;
+}

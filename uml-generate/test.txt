@@ -1,0 +1,20 @@
+@startuml
+
+skinparam pageMargin 10
+skinparam pageExternalColor gray
+skinparam pageBorderColor black
+
+class BaseClass
+
+	.BaseClass <|-- Person
+	Meeting o-- Person
+	
+	.BaseClass <|- Meeting
+
+
+    net.dummy.Person  <|- Person
+    .BaseClass <|-- Person
+    net.dummy.Meeting o-- Person
+
+BaseClass <|-- net.unused.Person
+@enduml

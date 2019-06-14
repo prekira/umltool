@@ -1,0 +1,25 @@
+package dhc.osgi.demo.sample.api.dto;
+
+/**
+ * This is a sample DTO, you will want to update it for your needs
+ * or copy it and update your pom files to use it
+ **/
+@GenericProperty(name="dtoVersion", value="1.0.0")
+@GenericProperty(name="Audited")
+class Sample {
+  @Since("1.0.0")
+  @Description("Some random data")
+  @NotRequired // Normally these fields *are* required
+  String someData;
+
+  @Since("1.0.0")
+  @Description("This is a sample enum, remove it if you feel like it")
+  @NotRequired // Normally these fields *are* required
+  @DtoEnum(name="dhc.osgi.demo.sample.api.dto.SampleFactor",
+      values={
+          @DtoEnumValue(name="low", description="Low"),
+          @DtoEnumValue(name="medium", description="Meduim"),
+          @DtoEnumValue(name="high", description="High")
+      })
+  Dto sampleFactor;
+}

@@ -1,0 +1,217 @@
+@startuml
+skinparam class {
+    BackgroundColor PaleGreen
+     ArrowColor SeaGreen
+   orderColor SpringGreen
+}
+skinparam enum {
+    BackgroundColor PaleBlue
+     ArrowColor Cyan
+   orderColor Blue
+}
+class AddressRole << Audited >> 
+{
+    +String partyId: 
+    +Dto addressRoleType: 
+    +String locationId: 
+}
+Party -o AddressRole: partyId      1
+
+Location -o AddressRole: locationId      1
+
+class PostalAddress
+{
+}
+class AccountRole << Audited >> 
+{
+    +Dto accountRoleType: 
+    +String organizationId: 
+    +String accountId: 
+}
+Organization -o AccountRole: organizationId      1
+
+Account -o AccountRole: accountId      1
+
+class RegistrationNewAccountRequest << Audited >> 
+{
+    +String firstName: 
+    +String lastName: 
+    +String password: (Optional)
+    +Email primaryContactEmail: 
+    +Phone primaryPhone: 
+    +AddressRole addressRole: 
+    +String partyId: (Optional)
+    +String accountId: (Optional)
+}
+Email -* RegistrationNewAccountRequest : + Email (inner class) 
+Phone -* RegistrationNewAccountRequest : + Phone (inner class) 
+AddressRole -* RegistrationNewAccountRequest : + AddressRole (inner class) 
+class Date
+{
+}
+class Staff
+{
+    +String accountId: 
+    +String firstName: 
+    +String lastName: 
+    +Email emails: 
+    +Phone phones: 
+    +PostalAddress postalLocation: 
+    +AccountRole roles: 
+}
+Email -* Staff : + Email (inner class) 
+Phone -* Staff : + Phone (inner class) 
+PostalAddress -* Staff : + PostalAddress (inner class) 
+AccountRole -* Staff : + AccountRole (inner class) 
+class Phone << Audited >> 
+{
+    +String partyId: 
+    +String phoneNumber: 
+    +Boolean isValidated: 
+    +Boolean isEnabled: (Optional)
+    +Dto messageablePhone: 
+    +Dto phoneType: (Optional)
+}
+Party -o Phone: partyId      1
+
+class OrganizationDetails << Audited >> 
+{
+    +String partyId: 
+    +String organizationId: 
+    +Email partyEmails: 
+    +Phone partyPhones: 
+    +AddressRole partyAddressRoles: 
+    +String name: 
+    +String description: 
+    +String parentOrganizationName: (Optional)
+    +PostalAddress postalAddressMap: 
+}
+Party -o OrganizationDetails: partyId      1
+
+Email -* OrganizationDetails : + Email (inner class) 
+Phone -* OrganizationDetails : + Phone (inner class) 
+AddressRole -* OrganizationDetails : + AddressRole (inner class) 
+Organization -o OrganizationDetails: parentOrganizationName      0..1
+
+PostalAddress -* OrganizationDetails : + PostalAddress (inner class) 
+class ResetToken << Audited >> 
+{
+    +String token: 
+    +Date expirationDate: 
+}
+class GeolocationTuple
+{
+    +String locationId: 
+    +PostalAddress postalAddress: 
+}
+PostalAddress -* GeolocationTuple : + PostalAddress (inner class) 
+class OrganizationCreationRequest << Audited >> 
+{
+    +String organizationName: 
+    +String organizationDescription: 
+    +String parentOrganizationId: (Optional)
+    +String emailAddresses: 
+    +Phone phones: 
+    +PostalAddress postalAddress: 
+}
+Phone -o OrganizationCreationRequest: phones      0..*
+
+Phone -* OrganizationCreationRequest : + Phone (inner class) 
+PostalAddress -* OrganizationCreationRequest : + PostalAddress (inner class) 
+class Organization << Audited >> 
+{
+    +String partyId: 
+    +String name: 
+    +String description: 
+    +String parentOrganizationId: (Optional)
+}
+Party -o Organization: partyId      1
+
+Organization -o Organization: parentOrganizationId      0..1
+
+class AuthenticationSecret << Audited >> 
+{
+    +String passwordHash: (Optional)
+    +String salt: (Optional)
+    +ResetToken resetTokens: (Optional)
+    +Dto hashFunction: 
+}
+ResetToken -o AuthenticationSecret: resetTokens      0..1
+
+ResetToken -* AuthenticationSecret : + ResetToken (inner class) 
+class Email << Audited >> 
+{
+    +String partyId: 
+    +String address: 
+    +Boolean isValidated: 
+    +Boolean isMessageable: 
+}
+Party -o Email: partyId      1
+
+class Party << Audited >> 
+{
+    +Boolean dummyField: (Optional)
+}
+class ExpandedAccountView
+{
+    +Account account: 
+    +Party party: 
+    +Email emails: 
+    +Phone phones: 
+    +AddressRole addressRoles: 
+    +AccountRole accountRoles: 
+}
+Account -* ExpandedAccountView : + Account (inner class) 
+Party -* ExpandedAccountView : + Party (inner class) 
+Email -* ExpandedAccountView : + Email (inner class) 
+Phone -* ExpandedAccountView : + Phone (inner class) 
+AddressRole -* ExpandedAccountView : + AddressRole (inner class) 
+AccountRole -* ExpandedAccountView : + AccountRole (inner class) 
+class Account << Audited >> 
+{
+    +String partyId: 
+    +String firstName: 
+    +String lastName: 
+    +String locationContactId: (Optional)
+    +String authenticationSecretId: 
+}
+Party -o Account: partyId      1
+
+AuthenticationSecret -o Account: authenticationSecretId      1
+
+enum AddressRoleType {
+   unknown
+   home
+   unit
+   office
+}
+enum AccountRoleType {
+   unknown
+   contact
+   contractor
+   employee
+   owner
+   partner
+   primary
+   subscriber
+   manager
+}
+enum MessageablePhone {
+   none
+   sms
+   pots
+}
+enum PhoneType {
+   UNKNOWN
+   OFFICE
+   HOME
+   MAIN
+   FAX
+   MOBILE
+}
+enum HashFunction {
+   EXTERNAL
+   MD5
+   PBKDF2
+}
+@enduml

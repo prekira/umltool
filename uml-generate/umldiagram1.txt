@@ -1,0 +1,57 @@
+@startuml
+skinparam class {
+    BackgroundColor PaleGreen
+     ArrowColor SeaGreen
+   orderColor SpringGreen
+}
+skinparam enum {
+    BackgroundColor PaleBlue
+     ArrowColor Cyan
+   orderColor Blue
+}
+class Sample << Audited >> 
+{
+    +String someData: (Optional)
+    +Dto sampleFactor: (Optional)
+}
+Dto -* Sample : Dto (inner class) 
+class IotDevice << Audited >> 
+{
+    +String name: 
+    +String description: 
+    +String location: 
+    +String macAddress: 
+    +String attrs: 
+    +String iotAuthId: 
+}
+IotAuth -o IotDevice: iotAuthId      1
+
+class IotApplication << Audited >> 
+{
+    +String appKey: 
+    +String appSecret: 
+    +String apiUrl: 
+    +String callbackUrl: 
+    +Dto vendor: (Optional)
+}
+Dto -* IotApplication : Dto (inner class) 
+class IotAuth << Audited >> 
+{
+    +String token: 
+    +String refreshToken: 
+    +String expires: 
+    +String description: 
+    +String iotApplicationId: 
+}
+IotApplication -o IotAuth: iotApplicationId      1
+
+enum SampleFactor {
+   low
+   medium
+   high
+}
+enum IotVendor {
+   Wink
+   Honeywell
+}
+@enduml
